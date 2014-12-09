@@ -5,11 +5,11 @@ WordPress Handlebars management. Sort of like wp_enqueue_scripts, this library i
 ### Usage
 * Add a template
 
-`ht_dms_enqueue_handlebar( 'comment-template', dirname( __FILE__ ) .'/templates/comment-template.html' );` 
+`holotree_enqueue_handlebar( 'comment-template', dirname( __FILE__ ) .'/templates/comment-template.html' );` 
 
 * Remove an already added template
 
-`ht_dms_deenqueue_handlebar( 'comment_template' );`
+`holotree_deenqueue_handlebar( 'comment_template' );`
 
 
 ### License, Copyright etc.

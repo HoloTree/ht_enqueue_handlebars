@@ -23,11 +23,6 @@ class print_handlebars {
 	private $templates;
 
 	/**
-	 * @var bool Override cache
-	 */
-	private $skip_cache;
-
-	/**
 	 * Constructor for class
 	 *
 	 * @param bool $skip_cache
@@ -41,13 +36,11 @@ class print_handlebars {
 	 * Prints the output if possible
 	 */
 	public function print_output() {
-		if ( $this->skip_cache || false == ( $output = wp_cache_get( $this->output_cache_key ) ) ) {
-			$output = $this->create_output();
-			if ( ! empty( $output ) ) {
-				$output = $this->add_comments( $output );
-				wp_cache_add( $this->output_cache_key, $output, '', $this->output_cache_length );
-			}
 
+		$output = $this->create_output();
+		if ( ! empty( $output ) ) {
+			$output = $this->add_comments( $output );
+			wp_cache_add( $this->output_cache_key, $output, '', $this->output_cache_length );
 		}
 
 		if ( ! empty( $output ) ) {
@@ -77,7 +70,7 @@ class print_handlebars {
 	 * @return array
 	 */
 	private function create_output() {
-
+		$output = false;
 		if ( is_array( $this->templates ) && ! empty( $this->templates ) ) {
 			foreach( $this->templates as $handle => $path ) {
 				if ( file_exists( $path ) ) {

@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "holotree\\ht_enqueue_handlebars": "src"
+            "holotree\\ht_enqueue_handlebars\\": "src"
         },
         "files" : [ "src/functions.php"]
     }

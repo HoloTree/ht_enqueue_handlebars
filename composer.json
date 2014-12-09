@@ -1,0 +1,26 @@
+{
+    "name": "holotree/ht_enqueue_handlebars",
+    "description": "WordPress Handlebars management.",
+    "type": "library",
+    "keywords": [
+        "wordpress"
+    ],
+    "license": "GPL-2.0+",
+    "authors": [
+        {
+            "name": "Josh Pollock",
+            "homepage": "http://joshpress.net",
+            "email": "Josh@JoshPress.net",
+            "role" : "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+    },
+    "autoload": {
+        "psr-4": {
+            "holotree\\ht_enqueue_handlebars": "src"
+        },
+        "files" : [ "src/functions.php"]
+    }
+}

@@ -9,14 +9,14 @@
  * @copyright 2014 Josh Pollock
  */ 
 
-if ( ! function_exists( 'ht_dms_enqueue_handlebar' ) ) :
+if ( ! function_exists( 'holotree_enqueue_handlebar' ) ) :
 	/**
 	 * Add a template to the templates to output array
 	 *
 	 * @param string $handle Handle for the template
 	 * @param string $path Path to template
 	 */
-	function ht_dms_enqueue_handlebar( $handle, $path ){
+	function holotree_enqueue_handlebar( $handle, $path ){
 		return holotree\ht_enqueue_handlebars\enqueue::enqueue( $handle, $path );
 	}
 endif;
@@ -27,7 +27,7 @@ if ( ! function_exists( 'ht_dms_deenqueue_handlebar' ) ) :
 	 *
 	 * @param string $handle Handle for the template
 	 */
-	 function ht_dms_deenqueue_handlebar( $handle ) {
+	 function holotree_deenqueue_handlebar( $handle ) {
 		 return holotree\ht_enqueue_handlebars\enqueue::deenqueue( $handle );
 
 	 }

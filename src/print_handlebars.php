@@ -36,11 +36,10 @@ class print_handlebars {
 	 * Prints the output if possible
 	 */
 	public function print_output() {
-
 		$output = $this->create_output();
+
 		if ( ! empty( $output ) ) {
 			$output = $this->add_comments( $output );
-			wp_cache_add( $this->output_cache_key, $output, '', $this->output_cache_length );
 		}
 
 		if ( ! empty( $output ) ) {
@@ -94,9 +93,13 @@ class print_handlebars {
 	 * @param string $path Path to template
 	 */
 	function add( $handle, $path ) {
-		$templates = array();
-		if ( is_array( $this->templates ) ) {
-			$templates = $this->templates;
+		if ( ! $path  || !  file_exists( $path ) ) {
+			return;
+		}
+
+		$templates = $this->templates;
+		if ( ! is_array( $this->templates ) ) {
+			$templates = array();
 		}
 
 		if ( ! isset( $templates[ $handle ] ) ) {

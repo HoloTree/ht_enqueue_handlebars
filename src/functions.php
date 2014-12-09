@@ -17,6 +17,10 @@ if ( ! function_exists( 'holotree_enqueue_handlebar' ) ) :
 	 * @param string $path Path to template
 	 */
 	function holotree_enqueue_handlebar( $handle, $path ){
+		if ( did_action( 'wp_footer' ) ) {
+			return;
+		}
+
 		return holotree\ht_enqueue_handlebars\enqueue::enqueue( $handle, $path );
 	}
 endif;
